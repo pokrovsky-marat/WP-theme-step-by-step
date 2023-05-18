@@ -740,6 +740,6 @@
                 </div>
             </div>
         </footer>
-    <script src="./js/main.min.js" defer></script>
+    <?php wp_footer(); ?>
     </body>
 </html>
