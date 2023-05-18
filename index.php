@@ -16,7 +16,6 @@
         <link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/apple-touch-icon-120x120.png">
         <link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/apple-touch-icon-144x144.png">
         <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon-180x180.png">
-        <link rel="stylesheet" href="./styles/main.min.css">
         <?php wp_head(); ?>
       </head>
     <body class="no-svg">
