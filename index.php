@@ -742,4 +742,41 @@
         </div>
     </div>
 </div>
+<?php
+//Хуки событие
+function hello()
+{
+    echo "Hello World";
+}
+function hello2()
+{
+    echo "Hello World 2";
+}
+add_action("my_hook", "hello");
+//Можно задавать порядок выполнения, чем меньше тем быстрее выполнится
+add_action("my_hook", "hello2", 3);
+do_action("my_hook");
+// Можно также передавать аргументы
+function greeting($message, $user)
+{
+    echo "<br/> " . $message . " " . $user;
+}
+add_action('greet_hook', 'greeting', 10, 2);
+do_action("greet_hook", "Hello dear customer ", "Ivan");
+
+//Хуки фильтр, они должны что-то возвращать.
+
+function my_filter_function($name)
+{
+    return "Filtered " . $name;
+}
+add_filter('my_filter', "my_filter_function");
+
+echo apply_filters('my_filter', " Ivan Bolvan");
+//Для удаления хуков используем
+remove_filter('my_filter', "my_filter_function");
+
+//Если указывали порядок при добавлении хука, то при его удалении тоже его указываем
+remove_action("my_hook", "hello2", 3);
+?>
 <?php get_footer(); ?>
