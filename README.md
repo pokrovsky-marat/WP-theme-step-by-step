@@ -10,11 +10,16 @@
 - Подключаем wp_footer(), Удаляем \<script\>
 - Подключаем скрипты в functions.php
 - Меняем пути для изображений и шрифтов
+
 ---
+
 - [underscores.me](https://underscores.me/) Генерация шаблона темы
 - Добавляем header.php, footer.php. Вырезаем и вставляем туда верхнюю и нижнюю часть повторяющегося шаблона.
+
 ---
+
 ## Hooks
+
 ```php
 <?php
 //Хуки событие
@@ -23,7 +28,7 @@ function hello(){
 }
 add_action("my_hook", "hello");//Цепляем хук
 do_action("my_hook");//Вызываем его
-// Можно также передавать аргументы, необходимо указывать их кол-во последний аргумент, 
+// Можно также передавать аргументы, необходимо указывать их кол-во последний аргумент,
 //Аргумент "10" это порядок выполнения когда их несколько чем меньше тем раньше.
 function greeting($message, $user){
     echo "<br/> " . $message . " " . $user;
@@ -45,3 +50,31 @@ remove_filter('my_filter', "my_filter_function");
 remove_action("my_hook", "hello2", 3);
 ?>
 ```
+
+## Добавление лого
+
+Чтобы из админки можно было выбирать лого сайта, добавляем в functions.php
+`add_theme_support( 'custom-logo' );`
+Для кастомной настройки отображения лого,
+
+```php
+<a href="<?php echo get_home_url(); ?>" class="header__logo">
+<img src="<?php
+  $custom_logo__url = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full');
+  echo $custom_logo__url[0];  ?>" alt=" Мир детства" class="header__logo-img">
+</a>
+```
+
+Для простых случаев
+
+```php
+<div class="header__logo">
+<?php the_custom_logo() ?>
+</div>
+```
+
+## Добавление названия
+
+Название сайта вписываем просто через 
+`<title><?php bloginfo('title'); ?></title>`
+при изменении в админке оно будет автоматически меняться.
