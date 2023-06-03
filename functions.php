@@ -9,3 +9,4 @@ function childhood_scripts()
   //Подключаем js, Если наш скрипт зависит от другого скрипта например jquery, то прописываем его в array('jquery')
   wp_enqueue_script('childhood-script', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
 }
+add_theme_support( 'custom-logo' );
