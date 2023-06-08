@@ -71,7 +71,11 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-1">
                 <div class="about__img">
-                    <img src="<?php the_field("about_img"); ?>" alt="про компанию">
+                    <?php
+                    $image = get_field('about_img');
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                    <?php } ?>
                 </div>
             </div>
             <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 col-xl-5 offset-xl-1">
