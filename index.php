@@ -90,10 +90,15 @@
 </div>
 <div class="specialists" id="specialists">
     <div class="container">
-        <div class="title">Наша команда</div>
+        <div class="title"><?php the_field('team_heading', 2) ?></div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <img class="specialists__img" src="<?php echo bloginfo('template_directory') . "/assets/img" ?>/team.jpg" alt="наша команда">
+                <?php $image = get_field('team_image');
+                if (!empty($image)) { ?>
+                    <img class="specialists__img" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
