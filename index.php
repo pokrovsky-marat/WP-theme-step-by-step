@@ -72,7 +72,7 @@
             <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-1">
                 <div class="about__img">
                     <?php
-                    $image = get_field('about_img');
+                    $image = get_field('about_img', 2);
                     if (!empty($image)) { ?>
                         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                     <?php } ?>
@@ -81,7 +81,7 @@
             <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 col-xl-5 offset-xl-1">
                 <h1 class="title underlined"><?php the_field("about_title"); ?></h1>
                 <div class="about__text">
-                    <?php the_field("about_description"); ?>
+                    <?php the_field("about_description", 2); ?>
                 </div>
                 <a href="#" class="button">Узнать больше</a>
             </div>
@@ -93,7 +93,7 @@
         <div class="title"><?php the_field('team_heading', 2) ?></div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <?php $image = get_field('team_image');
+                <?php $image = get_field('team_image', 2);
                 if (!empty($image)) { ?>
                     <img class="specialists__img" src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
                 <?php
@@ -194,7 +194,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="toys__alert">
-                    <span>Не нашли то, что искали?</span> Свяжитесь с нами - и мы с радостью создадим любую игрушку по вашему желанию. Вы можете выбрать все: размер, материал, формы...!
+                    <span><?php the_field('call_question', 2) ?></span><?php the_field('call_description', 2) ?>
                 </div>
             </div>
         </div>
