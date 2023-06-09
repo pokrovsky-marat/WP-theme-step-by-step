@@ -243,14 +243,12 @@
 </div>
 
 <div class="contacts" id="contacts">
-    <h1 class="title">Где нас найти</h1>
+    <h1 class="title"><?php the_field('location_heading', 2) ?></h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="contacts__descr underlined">
-                    Мы находимся в Москве, метро "Парк победы", в деловом центре "Парк победы", второй этаж
-                    <br> <br>
-                    по адресу ул. Василисы Кожиной, 1
+                    <?php the_field('location_description', 2) ?>
                 </div>
             </div>
             <div class="col-lg-6">
