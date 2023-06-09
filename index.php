@@ -322,7 +322,7 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <a href="tel:+797867834347">+797867834347</a>
+                                <a href="tel:<?php the_field('telephone_1', 2) ?>"><?php the_field('telephone_1', 2) ?></a>
                             </div>
                         </div>
                         <div class="contacts__phoneblock">
@@ -372,13 +372,13 @@
                                         </linearGradient>
                                     </defs>
                                 </svg>
-                                <a href="tel:+797867834358">+797867834358</a>
+                                <a href="tel:<?php the_field('telephone_2', 2) ?>"><?php the_field('telephone_2', 2) ?></a>
                             </div>
                         </div>
                     </div>
                     <div class="contacts__mail">
                         Или напишите нам на почту
-                        <a href="mailto:mirdetstva@gmail.com">mirdetstva@gmail.com</a>
+                        <a href="mailto:<?php the_field('mail', 2) ?>"><?php the_field('mail', 2) ?></a>
                     </div>
                 </div>
             </div>
